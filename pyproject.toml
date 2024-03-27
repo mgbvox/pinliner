@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "pinliner"
+version = "0.2.0"
+description = "This tool allows you to merge all files that comprise a Python package into a single file and be able to use this single file as if it were a package."
+authors = ["Matthew Billman <mgbvox@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.group.dev.dependencies]
+bumpversion = "^0.6.0"
+watchdog = "^4.0.0"
+ruff = "^0.3.4"
+black = "^24.3.0"
+mypy = "^1.9.0"
+tox = "^4.14.2"
+coverage = "^7.4.4"
+cryptography = "^42.0.5"
+pyyaml = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.bumpversion]
+current_version = "0.2.0"
+commit = true
+tag = true
+files = ["setup.py", "pinliner/__init__.py"]
+
+[tool.wheel]
+universal = true
+
+[tool.ruff]
+exclude = ["docs"]
+
